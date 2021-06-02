@@ -19,7 +19,7 @@ pip.exe install -r requirements.txt
 python.exe main.py
 ```
 
-![alt text](loading.gif "Loading")
+![alt text](loading.gif)
 
 ### Result
 
