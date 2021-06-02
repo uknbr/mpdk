@@ -44,17 +44,25 @@ def timer(start, end):
 	minutes, seconds = divmod(rem, 60)
 	print(">>> Elapsed time {:0>2}:{:0>2}:{:05.4f}\n".format(int(hours),int(minutes),seconds))
 
+def getDuration(value):
+	count = 0.95 / config.interval
+	seconds = value / count
+	minutes = seconds / 60
+	hours = minutes / 60
+	return "{:0>2}:{:0>2}:{:05.2f}".format(int(hours),int(minutes),seconds)
+
 def status():
 	end = time.time()
 	full = 0
 	for e in events:
 		full = full + e.count
-	events_table = PrettyTable(["FIRST","LAST","COUNT","%","TITLE"])
+	events_table = PrettyTable(["FIRST","LAST","DURATION","%","TITLE"])
 	sorted_events = sorted(events, key=lambda x: x.count, reverse=True)
 	for e in sorted_events:
 		p = percentage(full, e.count)
 		if p > config.ignore_event:
-			events_table.add_row([e.first, e.last, e.count, p, e.title[-config.title_size:]])
+			#events_table.add_row([e.first, e.last, e.count, p, e.title[-config.title_size:]])
+			events_table.add_row([e.first, e.last, getDuration(e.count), p, e.title[-config.title_size:]])
 	sys.stdout.write("\r" + str(events_table) + "\n")
 	sys.stdout.flush()
 	timer(start, end)

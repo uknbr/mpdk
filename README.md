@@ -2,16 +2,21 @@
 
 **M**y **P**roductivity **D**on't **K**eel
 
+This is my simple tool to monitor active windows and summarize your activities during the day.
+
 ### Install
 
 ```bash
-pip3 install -r requirements.txt
+pip.exe install -r requirements.txt
 ```
+
+### Configuration
+- config.py
 
 ### Run
 
 ```bash
-python3.exe main.py
+python.exe main.py
 ```
 
 ### Result
@@ -29,8 +34,6 @@ python3.exe main.py
 | Tue Jun  1 08:53:38 2021 | Tue Jun  1 17:51:45 2021 |  4976 |  3.29 |        Google Chrome        |
 | Tue Jun  1 14:39:42 2021 | Tue Jun  1 17:21:03 2021 |  4552 |  3.01 |        Desktop Viewer       |
 | Tue Jun  1 13:36:12 2021 | Tue Jun  1 14:28:53 2021 |  4470 |  2.96 | Windows Default Lock Screen |
-| Tue Jun  1 08:41:56 2021 | Tue Jun  1 17:46:28 2021 |  4006 |  2.65 |       Message (HTML)        |
-| Tue Jun  1 09:44:29 2021 | Tue Jun  1 17:41:58 2021 |  3398 |  2.25 |           Vivaldi           |
 +--------------------------+--------------------------+-------+-------+-----------------------------+
 >>> Elapsed time 09:11:46.7201
 ```
