@@ -1,0 +1,2 @@
+PyGetWindow==0.0.9
+prettytable==0.7.2
