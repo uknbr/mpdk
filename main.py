@@ -6,6 +6,7 @@ import config
 import time
 import signal
 import sys
+import json
 
 class event: 
 	def __init__(self, title, date): 
@@ -39,17 +40,18 @@ def addEvent(item, date):
 def percentage(total, value):
 	return round((value * 100) / total, 2)
 
-def timer(start, end):
-	hours, rem = divmod(end-start, 3600)
+def elapsedTime(start, end):
+	print(f">>> Elapsed time: {GetTimer(end-start)}\n")
+
+def GetTimer(sec):
+	hours, rem = divmod(sec, 3600)
 	minutes, seconds = divmod(rem, 60)
-	print(">>> Elapsed time {:0>2}:{:0>2}:{:05.4f}\n".format(int(hours),int(minutes),seconds))
+	return "{:0>2}:{:0>2}:{:05.4f}".format(int(hours),int(minutes),seconds)
 
 def getDuration(value):
-	count = 0.95 / config.interval
+	count = 0.90 / config.interval
 	seconds = value / count
-	minutes = seconds / 60
-	hours = minutes / 60
-	return "{:0>2}:{:0>2}:{:05.2f}".format(int(hours),int(minutes),seconds)
+	return GetTimer(seconds)
 
 def status():
 	end = time.time()
@@ -58,18 +60,22 @@ def status():
 		full = full + e.count
 	events_table = PrettyTable(["FIRST","LAST","DURATION","%","TITLE"])
 	sorted_events = sorted(events, key=lambda x: x.count, reverse=True)
+
+	t = datetime.now().strftime("%Y%m%d")
+	with open(f"data_{t}.json", "w") as outfile:
+		json.dump([obj.__dict__ for obj in sorted_events], outfile)
+
 	for e in sorted_events:
 		p = percentage(full, e.count)
 		if p > config.ignore_event:
-			#events_table.add_row([e.first, e.last, e.count, p, e.title[-config.title_size:]])
 			events_table.add_row([e.first, e.last, getDuration(e.count), p, e.title[-config.title_size:]])
 	sys.stdout.write("\r" + str(events_table) + "\n")
 	sys.stdout.flush()
-	timer(start, end)
+	elapsedTime(start, end)
 
 def signal_handler(signal, frame):
 	print("\033c")
-	print(f"===== SUMMARY =====\n")
+	print(f"SUMMARY\n")
 	status()
 	sys.exit(0)
 
