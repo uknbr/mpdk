@@ -74,8 +74,10 @@ def status():
 	number_format = workbook.add_format({"num_format": "##0.00"})
 	worksheet.write("A1", "FIRST", bold)
 	worksheet.write("B1", "LAST", bold)
-	worksheet.write("C1", "%", bold)
-	worksheet.write("D1", "TITLE", bold)
+	worksheet.write("C1", "DURATION", bold)
+	worksheet.write("D1", "%", bold)
+	worksheet.write("E1", "TITLE", bold)
+
 	row = 1
 	col = 0
 	total_p = 0.0
@@ -83,12 +85,14 @@ def status():
 	for e in sorted_events:
 		p = percentage(full, e.count)
 		w = e.title[-config.title_size:]
+		d = getDuration(e.count)
 		if p > config.ignore_event:
-			events_table.add_row([e.first, e.last, getDuration(e.count), p, w])
+			events_table.add_row([e.first, e.last, d, p, w])
 			worksheet.write(row, col, e.first)
 			worksheet.write(row, col+1, e.last)
-			worksheet.write_number(row, col+2, p, number_format)
-			worksheet.write_string(row, col+3, w)
+			worksheet.write_string(row, col+2, d)
+			worksheet.write_number(row, col+3, p, number_format)
+			worksheet.write_string(row, col+4, w)
 			row += 1
 			total_p += p
 
@@ -96,29 +100,34 @@ def status():
 		others = 100.0 - total_p
 		worksheet.write(row, col, "N/A")
 		worksheet.write(row, col+1, "N/A")
-		worksheet.write_number(row, col+2, others, number_format)
-		worksheet.write_string(row, col+3, "Others")
+		worksheet.write(row, col+2, "N/A")
+		worksheet.write_number(row, col+3, others, number_format)
+		worksheet.write_string(row, col+4, "Others")
 		row += 1
-
-	sys.stdout.write("\r" + str(events_table) + "\n")
-	sys.stdout.flush()
-	elapsedTime(start, end)
 
 	pie_chart = workbook.add_chart({"type":"pie"})
 	pie_chart.set_legend({"none": True})
 	pie_chart.add_series({
 		"name":"My productivity today",
-		"categories":f"=Data!$D$2:$D${row}",
-		"values":f"=Data!$C$2:$C${row}",
+		"categories":f"=Data!$E$2:$E${row}",
+		"values":f"=Data!$D$2:$D${row}",
 		"data_labels":{"value":True,"category_name":True,"position":"outside_end"}
     })
 	pie_chart.set_style(10)
 	pie_chart.set_legend({"position": "right"})
 	pie_chart.set_size({"width": 720, "height": 560})
 	worksheet.insert_chart("H3", pie_chart)
+
+	worksheet.write(f"A{row + 2}", "ELAPSED", bold)
+	worksheet.write(f"A{row + 3}", GetTimer(end-start))
 	workbook.close()
 
-def signal_handler(signal, frame):
+	# Output
+	sys.stdout.write("\r" + str(events_table) + "\n")
+	sys.stdout.flush()
+	elapsedTime(start, end)
+
+def signalHandler(signal, frame):
 	print("\033c")
 	print(f"SUMMARY\n")
 	status()
@@ -130,7 +139,7 @@ def animation(value):
 	sys.stdout.flush()
 
 if __name__ == "__main__":
-	signal.signal(signal.SIGINT, signal_handler)
+	signal.signal(signal.SIGINT, signalHandler)
 	print("[INFO] Start monitoring, press CTRL + C to stop")
 	progress = 0
 	time.sleep(1)
