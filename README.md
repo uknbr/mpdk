@@ -24,7 +24,7 @@ python.exe main.py
 ### Result
 
 ```terminal
-===== SUMMARY =====
+SUMMARY
 
 +--------------------------+--------------------------+-------+-------+-----------------------------+
 |          FIRST           |           LAST           | COUNT |   %   |            TITLE            |
@@ -40,6 +40,6 @@ python.exe main.py
 >>> Elapsed time 09:11:46.7201
 ```
 
-### Chart (manually created)
+### Report (Pie chart)
 
 ![alt text](pie.jpeg "Pie")
