@@ -1,4 +1,5 @@
 @echo off
-rem Call Python
+:: Call Python
 cls
-python.exe main.py
+python.exe mpdk.py
+pause

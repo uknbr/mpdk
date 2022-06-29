@@ -1,0 +1,68 @@
+2021-06-13 16:57:29,226 | DEBUG | Display event history
+2021-06-13 16:57:52,719 | INFO | Hello!
+2021-06-13 16:57:56,691 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 16:58:56,701 | DEBUG | See you tomorrow!
+2021-06-13 16:59:12,599 | DEBUG | Closing
+2021-06-13 17:16:06,715 | DEBUG | Display event history
+2021-06-13 17:16:19,127 | INFO | Bye!
+2021-06-13 17:17:19,604 | INFO | Starting...
+2021-06-13 17:17:22,942 | DEBUG | Display event history
+2021-06-13 17:17:28,362 | DEBUG | Display event history
+2021-06-13 17:17:55,392 | INFO | Bye!
+2021-06-13 17:20:55,115 | INFO | Starting...
+2021-06-13 17:21:29,154 | INFO | Bye!
+2021-06-13 17:30:52,317 | INFO | Starting...
+2021-06-13 17:31:07,499 | DEBUG | Status
+2021-06-13 17:31:19,657 | INFO | Hello!
+2021-06-13 17:31:21,447 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 17:32:21,457 | DEBUG | See you tomorrow!
+2021-06-13 17:32:39,459 | INFO | Bye!
+2021-06-13 17:38:10,264 | INFO | Starting...
+2021-06-13 17:38:13,249 | INFO | Hello!
+2021-06-13 17:38:15,117 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 17:38:21,353 | DEBUG | Status
+2021-06-13 17:39:15,122 | DEBUG | See you tomorrow!
+2021-06-13 17:39:27,538 | INFO | Bye!
+2021-06-13 17:46:46,661 | INFO | Starting...
+2021-06-13 17:47:03,346 | INFO | Bye!
+2021-06-13 17:47:52,342 | INFO | Starting...
+2021-06-13 17:48:02,149 | INFO | Bye!
+2021-06-13 17:48:19,692 | INFO | Starting...
+2021-06-13 17:48:23,865 | INFO | Hello!
+2021-06-13 17:48:26,317 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 17:48:31,167 | INFO | Bye!
+2021-06-13 17:49:13,601 | INFO | Starting...
+2021-06-13 17:49:19,198 | INFO | Bye!
+2021-06-13 17:49:53,690 | INFO | Starting...
+2021-06-13 17:50:02,926 | INFO | Bye!
+2021-06-13 17:50:59,722 | INFO | Starting...
+2021-06-13 17:51:05,873 | INFO | Bye!
+2021-06-13 17:53:25,695 | INFO | Starting...
+2021-06-13 17:54:20,523 | INFO | Bye!
+2021-06-13 17:55:07,775 | INFO | Starting...
+2021-06-13 17:55:12,394 | INFO | Bye!
+2021-06-13 17:56:20,107 | INFO | Starting...
+2021-06-13 17:56:26,107 | INFO | Bye!
+2021-06-13 17:58:14,705 | INFO | Starting...
+2021-06-13 17:58:22,344 | INFO | Bye!
+2021-06-13 18:02:40,660 | INFO | Starting...
+2021-06-13 18:02:43,256 | INFO | Hello!
+2021-06-13 18:02:45,125 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 18:02:54,049 | INFO | Bye!
+2021-06-13 18:05:48,711 | INFO | Starting...
+2021-06-13 18:05:53,625 | DEBUG | Status
+2021-06-13 18:05:56,745 | INFO | Hello!
+2021-06-13 18:05:58,524 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 18:06:58,530 | DEBUG | See you tomorrow!
+2021-06-13 18:09:53,186 | INFO | Starting...
+2021-06-13 18:09:55,675 | INFO | Hello!
+2021-06-13 18:09:57,581 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 18:09:57,582 | DEBUG | See you tomorrow!
+2021-06-13 18:12:18,782 | INFO | Starting...
+2021-06-13 18:12:21,540 | INFO | Hello!
+2021-06-13 18:12:23,484 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 18:12:23,484 | DEBUG | See you tomorrow!
+2021-06-13 18:13:05,402 | INFO | Starting...
+2021-06-13 18:13:08,178 | INFO | Hello!
+2021-06-13 18:13:09,766 | DEBUG | Wait for 60 until next pop-up
+2021-06-13 18:13:09,766 | DEBUG | See you tomorrow!
