@@ -36,9 +36,9 @@ def containsWindow(w, t):
 
 def mapping(s):
     for k, v in config.mapping_event.items():
-        if s == k:
-            return v
-    return s
+        if str(s) == str(k):
+            return str(v)
+    return str(s)
 
 def addEvent(item, date):
     # Get names based on separator

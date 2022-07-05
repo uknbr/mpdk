@@ -8,7 +8,7 @@ debug = False
 title_size = 40
 # Ignore events based on percentage
 ignore_event = 2
-# Mapping
+# Mapping event names
 mapping_event = {
     "Message (HTML)": "Outlook",
     "Visual Studio Code [Administrator]": "Visual Studio Code",
